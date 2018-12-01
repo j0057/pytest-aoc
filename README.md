@@ -33,52 +33,27 @@ each line in the file `input/day01.txt`.
 
 ## Fixtures
 
-### dayNN\_text
+These fixtures are synthesized for each available day. They're not executed
+until you ask for them in a test.
 
-The text in the input file, but stripped of any leading and trailing whitespace.
-
-### dayNN\_raw
-
-The raw text in the input file.
-
-### dayNN\_lines
-
-A list of lines.
-
-### dayNN\_numbers
-
-A list of numbers.
-
-### dayNN\_number
-
-A single number.
-
-### dayNN\_grid
-
-A list of lists, representing a grid of textual values.
-
-### dayNN\_number\_grid
-
-A list of lists, representing a grid of numbers.
+- `dayNN_text`: The text in the input file, but stripped of any leading and trailing whitespace.
+- `dayNN_raw`: The raw text in the input file.
+- `dayNN_lines`: A list of lines.
+- `dayNN_numbers`: A list of numbers.
+- `dayNN_number`: A single number.
+- `dayNN_grid`: A list of lists, representing a grid of textual values.
+- `dayNN_number_grid`: A list of lists, representing a grid of numbers.
 
 ## Command-line and configuration options
 
 You can pass the options from the command line or set them in setup.cfg. The
 command line takes precedence.
 
-### --aoc-year / aoc\_year
-
-(Mandatory) The year for which to download puzzle inputs.
-
-### --aoc-session-id / aoc\_session\_id
-
-(Optional) The session ID to use for requesting puzzle inputs.
-
-### --aoc-session-file / aoc\_session\_file
-
-(Optional; default `.cookie`) The file from which to read the session ID.
-
-### --aoc-input-dir / aoc\_input\_dir
-
-(Optional; default `input`) The directory in which inputs are stored. Will be
-created if it doesn't exist.
+- `--aoc-year`/`aoc_year`: The year for which to download puzzle inputs.
+  (Mandatory)
+- `--aoc-session-id`/`aoc_session_id`: The session ID to use for requesting
+  puzzle inputs. (Optional)
+- `--aoc-session-file`/`aoc_session_file`: The file from which to read the
+  session ID. (Optional; default `.cookie`)
+- `--aoc-input-dir`/`aoc_input_dir`: The directory in which inputs are stored.
+  Will be created if it doesn't exist. (Optional; default `input`)
