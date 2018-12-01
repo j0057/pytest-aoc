@@ -16,6 +16,7 @@ setup(
     description="Downloads puzzle inputs for Advent of Code and synthesizes PyTest fixtures",
     long_description=description,
     long_description_content_type="text/markdown",
+    url="https://github.com/j0057/pytest-aoc",
     entry_points={
         "pytest11": ["pytest-aoc=pytest_aoc"]
     },
