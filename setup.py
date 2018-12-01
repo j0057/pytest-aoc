@@ -13,7 +13,9 @@ setup(
     version_command=('git describe', 'pep440-git'),
     author="Joost Molenaar",
     author_email="j.j.molenaar@gmail.com",
-    description=description,
+    description="Downloads puzzle inputs for Advent of Code and synthesizes PyTest fixtures",
+    long_description=description,
+    long_description_content_type="text/markdown",
     entry_points={
         "pytest11": ["pytest-aoc=pytest_aoc"]
     },
