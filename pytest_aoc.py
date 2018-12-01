@@ -34,6 +34,8 @@ def download_inputs(year, input_dir, session_id, session_file):
         response = requests.get(f"https://adventofcode.com/{year}/day/{day}/input",
                                 cookies={'session': get_cookie(session_id, session_file)})
         print(f"download {fn}: {response.status_code} {response.reason}")
+        if response.status_code != 200:
+            continue
         with open(fn, 'w') as f:
             f.write(response.text)
 
