@@ -2,6 +2,9 @@
 
 from setuptools import setup
 
+with open('README.md', 'r') as f:
+    description = f.read()
+
 setup(
     name="pytest-aoc",
     py_modules=["pytest_aoc"],
@@ -10,6 +13,7 @@ setup(
     version_command=('git describe', 'pep440-git'),
     author="Joost Molenaar",
     author_email="j.j.molenaar@gmail.com",
+    description=description,
     entry_points={
         "pytest11": ["pytest-aoc=pytest_aoc"]
     },
