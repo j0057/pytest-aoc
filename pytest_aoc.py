@@ -18,7 +18,7 @@ def pytest_addoption(parser):
     parser.addini('aoc_session_id', help='session ID to use for retrieving input')
     parser.addini('aoc_session_file', help='file from which to read session ID')
 
-def get_session_id(session_id, session_file):
+def get_cookie(session_id, session_file):
     if session_id:
         return session_id
     with open(session_file, 'r') as f:
