@@ -33,7 +33,7 @@ def download_inputs(year, input_dir, session_id, session_file):
             continue
         response = requests.get(f"https://adventofcode.com/{year}/day/{day}/input",
                                 cookies={'session': get_cookie(session_id, session_file)})
-        print(f"download {fn}... {response.status_code} {response.status_text}")
+        print(f"download {fn}: {response.status_code} {response.reason}")
         with open(fn, 'w') as f:
             f.write(response.text)
 
