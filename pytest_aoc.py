@@ -28,8 +28,11 @@ def create_input_dir(input_dir):
     if not os.path.isdir(input_dir):
         os.makedirs(input_dir)
 
-def download_inputs(year, input_dir, session_id, session_file):
-    for day in range(1, min(25, (datetime.datetime.utcnow() - datetime.datetime(year, 11, 30, 5, 0, 0)).days)+1):
+def get_available_days(year, now):
+    return [*range(1, min(25, (now - datetime.datetime(year, 11, 30, 5, 0, 0)).days)+1)]
+
+def download_inputs(year, days, input_dir, session_id, session_file):
+    for day in days:
         fn = os.path.join(input_dir, 'day{0:02}.txt'.format(day))
         if os.path.exists(fn):
             continue
@@ -55,8 +58,8 @@ def create_fixture(name, fn):
         f"{name}_number_grid" : pytest.fixture(lambda: with_file(fn, lambda f: [[int(s) for s in row.split()] for row in f]))
     })
 
-def create_fixtures(year, input_dir):
-    for day in range(1, min(25, (datetime.datetime.utcnow() - datetime.datetime(year, 11, 30, 5, 0, 0)).days)+1):
+def create_fixtures(year, days, input_dir):
+    for day in days:
         create_fixture("day{0:02}".format(day), os.path.join(input_dir, "day{0:02}.txt".format(day)))
 
 def pytest_sessionstart(session):
@@ -66,5 +69,6 @@ def pytest_sessionstart(session):
     session_file = session.config.getoption('aoc_session_file') or session.config.getini('aoc_session_file')
     if year:
         create_input_dir(input_dir)
-        download_inputs(int(year), input_dir, session_id, session_file)
-        create_fixtures(int(year), input_dir)
+        days = get_available_days(int(year), datetime.datetime.utcnow())
+        download_inputs(int(year), days, input_dir, session_id, session_file)
+        create_fixtures(int(year), days, input_dir)
