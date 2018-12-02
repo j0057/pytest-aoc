@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime
 import os
 import os.path
 
@@ -27,7 +27,7 @@ def get_cookie(session_id, session_file):
 def download_inputs(year, input_dir, session_id, session_file):
     if not os.path.isdir(input_dir):
         os.makedirs(input_dir)
-    for day in range(1, min(25, (datetime.utcnow() - datetime(year, 11, 30, 5, 0, 0)).days)+1):
+    for day in range(1, min(25, (datetime.datetime.utcnow() - datetime.datetime(year, 11, 30, 5, 0, 0)).days)+1):
         fn = os.path.join(input_dir, 'day{0:02}.txt'.format(day))
         if os.path.exists(fn):
             continue
@@ -54,7 +54,7 @@ def create_fixture(name, fn):
     })
 
 def create_fixtures(year, input_dir):
-    for day in range(1, min(25, (datetime.utcnow() - datetime(year, 11, 30, 5, 0, 0)).days)+1):
+    for day in range(1, min(25, (datetime.datetime.utcnow() - datetime.datetime(year, 11, 30, 5, 0, 0)).days)+1):
         create_fixture("day{0:02}".format(day), os.path.join(input_dir, "day{0:02}.txt".format(day)))
 
 def pytest_sessionstart(session):
