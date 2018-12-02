@@ -24,9 +24,11 @@ def get_cookie(session_id, session_file):
     with open(session_file, 'r') as f:
         return f.read().strip()
 
-def download_inputs(year, input_dir, session_id, session_file):
+def create_input_dir(input_dir):
     if not os.path.isdir(input_dir):
         os.makedirs(input_dir)
+
+def download_inputs(year, input_dir, session_id, session_file):
     for day in range(1, min(25, (datetime.datetime.utcnow() - datetime.datetime(year, 11, 30, 5, 0, 0)).days)+1):
         fn = os.path.join(input_dir, 'day{0:02}.txt'.format(day))
         if os.path.exists(fn):
@@ -63,5 +65,6 @@ def pytest_sessionstart(session):
     session_id = session.config.getoption('aoc_session_id') or session.config.getini('aoc_session_id')
     session_file = session.config.getoption('aoc_session_file') or session.config.getini('aoc_session_file')
     if year:
+        create_input_dir(input_dir)
         download_inputs(int(year), input_dir, session_id, session_file)
         create_fixtures(int(year), input_dir)
