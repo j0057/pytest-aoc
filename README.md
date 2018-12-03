@@ -3,7 +3,7 @@
 This pytest plugin downloads puzzle inputs for [Advent of Code][1] and
 synthesizes fixtures that you can use in your tests.
 
-[1] https://adventofcode.com/
+[1]: https://adventofcode.com/
 
 ## Installing and configuring
 
