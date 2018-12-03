@@ -15,7 +15,6 @@ def pytest_addoption(parser):
 
     parser.addini('aoc_year', help='year to download input files for')
     parser.addini('aoc_input_dir', help='directory to store input files in')
-    parser.addini('aoc_session_id', help='session ID to use for retrieving input')
     parser.addini('aoc_session_file', help='file from which to read session ID')
 
 def get_cookie(session_id, session_file):

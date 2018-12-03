@@ -53,8 +53,8 @@ command line takes precedence.
 
 - `--aoc-year`/`aoc_year`: The year for which to download puzzle inputs.
   (Mandatory)
-- `--aoc-session-id`/`aoc_session_id`: The session ID to use for requesting
-  puzzle inputs. (Optional)
+- `--aoc-session-id`: The session ID to use for requesting puzzle inputs. This
+  one has no equivalent setup.cfg key; that's a security feature. (Optional)
 - `--aoc-session-file`/`aoc_session_file`: The file from which to read the
   session ID. (Optional; default `.cookie`)
 - `--aoc-input-dir`/`aoc_input_dir`: The directory in which inputs are stored.
