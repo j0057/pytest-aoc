@@ -40,7 +40,7 @@ until you ask for them in a test.
 
 - `dayNN_text`: The text in the input file, but stripped of any leading and trailing whitespace.
 - `dayNN_raw`: The raw text in the input file.
-- `dayNN_lines`: A list of lines.
+- `dayNN_lines`: A list of stripped lines.
 - `dayNN_numbers`: A list of numbers.
 - `dayNN_number`: A single number.
 - `dayNN_grid`: A list of lists, representing a grid of textual values.
