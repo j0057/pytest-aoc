@@ -64,7 +64,7 @@ def create_fixtures(year, days, input_dir):
 def pytest_sessionstart(session):
     year = session.config.getoption('aoc_year') or session.config.getini('aoc_year')
     input_dir = session.config.getoption('aoc_input_dir') or session.config.getini('aoc_input_dir')
-    session_id = session.config.getoption('aoc_session_id') or session.config.getini('aoc_session_id')
+    session_id = session.config.getoption('aoc_session_id')
     session_file = session.config.getoption('aoc_session_file') or session.config.getini('aoc_session_file')
     if year:
         create_input_dir(input_dir)
