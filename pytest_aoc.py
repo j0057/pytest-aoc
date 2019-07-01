@@ -32,7 +32,7 @@ def get_available_days(year, now):
 
 def download_inputs(year, days, input_dir, session_id, session_file):
     for day in days:
-        fn = os.path.join(input_dir, 'day{0:02}.txt'.format(day))
+        fn = os.path.join(input_dir, f"day{day:02}.txt")
         if os.path.exists(fn):
             continue
         response = requests.get(f"https://adventofcode.com/{year}/day/{day}/input",
@@ -59,7 +59,7 @@ def create_fixture(name, fn):
 
 def create_fixtures(year, days, input_dir):
     for day in days:
-        create_fixture("day{0:02}".format(day), os.path.join(input_dir, "day{0:02}.txt".format(day)))
+        create_fixture(f"day{day:02}", os.path.join(input_dir, f"day{day:02}.txt"))
 
 def pytest_sessionstart(session):
     year = session.config.getoption('aoc_year') or session.config.getini('aoc_year')
