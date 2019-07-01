@@ -51,7 +51,7 @@ def create_fixture(name, fn):
         f"{name}_text"        : pytest.fixture(lambda: with_file(fn, lambda f: f.read().strip())),
         f"{name}_raw"         : pytest.fixture(lambda: with_file(fn, lambda f: f.read())),
         f"{name}_lines"       : pytest.fixture(lambda: with_file(fn, lambda f: [line.strip() for line in f])),
-        f"{name}_numbers"     : pytest.fixture(lambda: with_file(fn, lambda f: [int(line.strip()) for line in f])),
+        f"{name}_numbers"     : pytest.fixture(lambda: with_file(fn, lambda f: [int(line) for line in f])),
         f"{name}_number"      : pytest.fixture(lambda: with_file(fn, lambda f: int(f.read()))),
         f"{name}_grid"        : pytest.fixture(lambda: with_file(fn, lambda f: [row.split() for row in f])),
         f"{name}_number_grid" : pytest.fixture(lambda: with_file(fn, lambda f: [[int(s) for s in row.split()] for row in f]))
