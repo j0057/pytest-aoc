@@ -10,6 +10,11 @@ setup(
     py_modules=["pytest_aoc"],
     install_requires=['requests'],
     setup_requires=['setuptools-version-command'],
+    extras_require={
+        'dev': ['pytest', 'pytest-cov', 'pytest-freezegun', 'pytest-responses',
+                'setuptools', 'wheel', 'setuptools-version-command',
+                'twine', 'github-release']
+        },
     version_command=('git describe', 'pep440-git'),
     author="Joost Molenaar",
     author_email="j.j.molenaar@gmail.com",
