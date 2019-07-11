@@ -39,12 +39,25 @@ These fixtures are synthesized for each available day. They're not executed
 until you ask for them in a test.
 
 - `dayNN_text`: The text in the input file, but stripped of any leading and trailing whitespace.
+  ~ `"spam"`
+
 - `dayNN_raw`: The raw text in the input file.
+  ~ `"eggs\n"`
+
 - `dayNN_lines`: A list of stripped lines.
+  ~ `["spam", "eggs", "albatross"]`
+
 - `dayNN_numbers`: A list of numbers.
+  ~ `[1, 1, 2, 3, 5, 8]`
+
 - `dayNN_number`: A single number.
+  ~ `5`
+
 - `dayNN_grid`: A list of lists, representing a grid of textual values.
+  ~ `[["spam", "eggs"], ["ham", "albatross"]]`
+
 - `dayNN_number_grid`: A list of lists, representing a grid of numbers.
+  ~ `[[8, 1, 6], [3, 5, 7], [4, 9, 2]]`
 
 ## Command-line and configuration options
 
