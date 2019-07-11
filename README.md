@@ -7,7 +7,7 @@ synthesizes fixtures that you can use in your tests.
 
 ## Installing and configuring
 
-Installing is easy: `pip install pytest-aoc`. Next you will need to configure
+Installing is easy: `python -m pip install pytest-aoc`. Next you will need to configure
 _two_ things: for which event (year) the plugin should download inputs, and a
 valid session cookie. These are normally valid for about a month or so.
 
