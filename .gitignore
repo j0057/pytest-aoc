@@ -6,3 +6,4 @@ build
 .eggs
 htmlcov
 README.html
+env

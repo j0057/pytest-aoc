@@ -1,3 +1,7 @@
+"""Downloads puzzle inputs for Advent of Code and synthesizes PyTest fixtures"""
+
+__version__ = "1.3a0"
+
 import datetime
 import os
 import os.path

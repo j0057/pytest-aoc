@@ -1,0 +1,31 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.entrypoints.pytest11]
+pytest-aoc = "pytest_aoc"
+
+[tool.flit.metadata]
+dist-name = "pytest-aoc"
+module = "pytest_aoc"
+author = "Joost Molenaar"
+author-email = "j.j.molenaar@gmail.com"
+home-page = "https://github.com/j0057/pytest_aoc"
+description-file = "README.md"
+classifiers = [
+    "Framework :: Pytest",
+    "License :: OSI Approved :: MIT License",
+]
+requires-python = ">=3.0"
+requires = [
+    "requests",
+]
+
+[tool.flit.metadata.requires-extra]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-freezegun",
+    "pytest-mock",
+    "pytest-responses",
+]
