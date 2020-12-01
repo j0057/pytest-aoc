@@ -72,3 +72,19 @@ command line takes precedence.
   session ID. (Optional; default `.cookie`)
 - `--aoc-input-dir`/`aoc_input_dir`: The directory in which inputs are stored.
   Will be created if it doesn't exist. (Optional; default `input`)
+
+## Developing / testing
+
+Create a virtualenv named `env`:
+
+    virtualenv env
+
+Install this package in editable mode with all extra `dev` dependencies:
+
+    env/bin/pip install -e .[dev]
+
+(For me, these two steps are: `pydir env -e .[dev]`
+
+Run tests:
+
+    env/bin/python -m pytest
