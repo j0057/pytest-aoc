@@ -11,7 +11,7 @@ def pytest_addoption(parser):
     aoc.addoption('--aoc-year',         action='store', default=None,       help='year to download input files for')
     aoc.addoption('--aoc-input-dir',    action='store', default=None,       help='directory to store input files in')
     aoc.addoption('--aoc-session-id',   action='store', default=None,       help='session ID to use for retrieving input')
-    aoc.addoption('--aoc-session-file', action='store', default='.cookie',  help='file from which to read session ID')
+    aoc.addoption('--aoc-session-file', action='store', default=None,       help='file from which to read session ID')
 
     parser.addini('aoc_year', help='year to download input files for')
     parser.addini('aoc_input_dir', help='directory to store input files in')
@@ -67,7 +67,9 @@ def pytest_sessionstart(session):
             or session.config.getini('aoc_input_dir') \
             or 'input'
     session_id = session.config.getoption('aoc_session_id')
-    session_file = session.config.getoption('aoc_session_file') or session.config.getini('aoc_session_file')
+    session_file = session.config.getoption('aoc_session_file') \
+            or session.config.getini('aoc_session_file') \
+            or '.cookie'
     if year:
         create_input_dir(input_dir)
         days = get_available_days(int(year), datetime.datetime.utcnow())
