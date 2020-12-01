@@ -61,6 +61,7 @@ def create_fixtures(year, days, input_dir):
     for day in days:
         create_fixture(f"day{day:02}", os.path.join(input_dir, f"day{day:02}.txt"))
 
+# TODO: test the logic for command line option vs config file vs defaults precedence
 def pytest_sessionstart(session):
     year = session.config.getoption('aoc_year') \
             or session.config.getini('aoc_year')
