@@ -11,7 +11,7 @@ setup(
     install_requires=['requests'],
     setup_requires=['setuptools-version-command'],
     extras_require={
-        'dev': ['pytest', 'pytest-cov', 'pytest-freezegun', 'pytest-responses',
+        'dev': ['pytest', 'pytest-cov', 'pytest-freezegun', 'pytest-responses', 'pytest-mock',
                 'setuptools', 'wheel', 'setuptools-version-command',
                 'twine', 'github-release']
         },
