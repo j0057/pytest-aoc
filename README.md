@@ -88,3 +88,31 @@ Install this package in editable mode with all extra `dev` dependencies:
 Run tests:
 
     env/bin/python -m pytest
+
+## Releasing
+
+Tag the release version (or it will be a post-release on a previous version),
+where `x.y.z` is the version:
+
+    git tag -a x.y.z
+
+Check that the version is actually sane:
+
+    env/bin/python -m setup --version
+
+Bake an sdist and a wheel into a clean `dist` directory:
+
+    rm -f dist/*
+    env/bin/python -m setup sdist bdist_wheel
+
+Upload the goods to PyPI:
+
+    env/bin/python -m twine upload dist/*
+
+Upload the goods to Github, where again `x.y.z` is the version:
+
+    git push github master --tags
+    gh release create x.y.z --title $(env/bin/python -m setup --version) --prerelease
+    gh release upload x.y.z dist/*
+
+(Leave out the `--prerelease` flag as necessary.)
